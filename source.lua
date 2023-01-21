@@ -2,6 +2,7 @@
 
 --- Hope you enjoy! :D ---
 
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Player = game.Players.LocalPlayer
 local Window = OrionLib:MakeWindow({Name = "Key System", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "OrionTest"})
@@ -133,6 +134,49 @@ function MakeScriptHub()
             game:GetService("ReplicatedStorage").Basic.Anchor:FireServer(unpack(args))
             
             wait(0.0002)
+            local args = {
+                [1] = true
+            }
+            
+            game:GetService("ReplicatedStorage").Basic.Block:FireServer(unpack(args))
+            -----------------------------------------------------------------
+            local args = {
+                [1] = game:GetService("Players").LocalPlayer.Character.Head,
+                [2] = false
+            }
+            
+            game:GetService("ReplicatedStorage").Basic.Anchor:FireServer(unpack(args))
+            local args = {
+                [1] = game:GetService("Players").LocalPlayer.Character.Torso,
+                [2] = false
+            }
+            
+            game:GetService("ReplicatedStorage").Basic.Anchor:FireServer(unpack(args))
+            local args = {
+                [1] = game:GetService("Players").LocalPlayer.Character["Left Arm"],
+                [2] = false
+            }
+            
+            game:GetService("ReplicatedStorage").Basic.Anchor:FireServer(unpack(args))
+            local args = {
+                [1] = game:GetService("Players").LocalPlayer.Character["Left Leg"],
+                [2] = false
+            }
+            
+            game:GetService("ReplicatedStorage").Basic.Anchor:FireServer(unpack(args))
+            local args = {
+                [1] = game:GetService("Players").LocalPlayer.Character["Right Arm"],
+                [2] = false
+            }
+            
+            game:GetService("ReplicatedStorage").Basic.Anchor:FireServer(unpack(args))
+            local args = {
+                [1] = game:GetService("Players").LocalPlayer.Character["Right Leg"],
+                [2] = false
+            }
+            
+            game:GetService("ReplicatedStorage").Basic.Anchor:FireServer(unpack(args))
+            
         end
     end
         
