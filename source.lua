@@ -24,6 +24,7 @@ if game.PlaceId == 5864786637 then
     _G.WSVisual = true
     _G.KnifeSpam = true
     _G.Getarrow = true
+    _G.MechineGun = true
     -- Main functions: [TimeStopImmunity] --
     function BypassTS()
         while _G.BypassTS == true do
@@ -227,7 +228,16 @@ if game.PlaceId == 5864786637 then
                 end
             end
         
-        
+            function MechineGun()
+                while _G.MechineGun == true do
+                    local args = {
+                        [1] = true
+                    }
+                    
+                    game:GetService("ReplicatedStorage").Attacks.BulletShoot:FireServer(unpack(args))
+                    wait(.000002)
+                    end
+                end
             -- Visuals --
         function WSVisual()
             while _G.WSVisual == true do
@@ -402,6 +412,17 @@ if game.PlaceId == 5864786637 then
         Callback = function(Value)
             _G.KnifeSpam = Value
             KnifeSpam()
+        end    
+    })
+    local Section = Tab3:AddSection({
+        Name = "WhiteSnake:"
+    })
+    Tab3:AddToggle({
+        Name = "Mechine Gun",
+        Default = false,
+        Callback = function(Value)
+            _G.MechineGun = Value
+            MechineGun()
         end    
     })
     local Tab4 = Window:MakeTab({
