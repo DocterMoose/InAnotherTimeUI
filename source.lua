@@ -25,6 +25,7 @@ if game.PlaceId == 5864786637 then
     _G.KnifeSpam = true
     _G.Getarrow = true
     _G.MechineGun = true
+    _G.OverHeavenKnife = true
     -- Main functions: [TimeStopImmunity] --
     function BypassTS()
         while _G.BypassTS == true do
@@ -238,6 +239,13 @@ if game.PlaceId == 5864786637 then
                     wait(.000002)
                     end
                 end
+            
+            function OverHeavenKnife()
+                while _G.OverHeavenKnife == true do
+                    game:GetService("ReplicatedStorage").Attacks.OverHeavenKnifeThrow:FireServer()
+                    wait(.002)
+                end
+            end
             -- Visuals --
         function WSVisual()
             while _G.WSVisual == true do
@@ -384,6 +392,14 @@ if game.PlaceId == 5864786637 then
         Callback = function(Value)
             _G.LightningSpam = Value
             LightningSpam()
+        end    
+    })
+    Tab3:AddToggle({
+        Name = "OverHeaven Knife Spam",
+        Default = false,
+        Callback = function(Value)
+            _G.OverHeavenKnife = Value
+            OverHeavenKnife()
         end    
     })
     local Section = Tab3:AddSection({
